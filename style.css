@@ -21,10 +21,12 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(rgba(255,255,255,0.01) 1px, transparent 1px);
-  background-size: 3px 3px;
-  opacity: 0.5;
+  /* heavier static/grain */
+  background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35));
+  background-size: 3px 3px, 100% 100%;
+  opacity: 0.85;
   z-index: -1;
+  mix-blend-mode: overlay;
 }
 
 canvas#stars {
@@ -141,6 +143,22 @@ html { scroll-behavior: smooth; }
   transform: translateY(-3px);
   filter: drop-shadow(0 0 10px rgba(88,166,255,0.6));
 }
+
+.nav-skill{ margin-left: 14px }
+
+/* Skills section styles */
+.skills{ padding: 140px 20px 80px 20px; background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.6)); }
+.skills-inner{ max-width: 960px; margin: 0 auto; text-align: center }
+.skills h3{ font-size: 1.6rem; margin-bottom: 6px}
+.skills-sub{ color: #9aa6b2; margin-bottom: 22px }
+.skill-cards{ display:flex; gap:20px; justify-content:center; flex-wrap:wrap }
+.skill-card{ display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; background: rgba(255,255,255,0.02); padding:14px 18px; border-radius:12px; min-width:220px; transition: transform .12s ease, box-shadow .12s ease; border: 1px solid rgba(255,255,255,0.03); }
+.skill-card:hover{ transform: translateY(-6px); box-shadow: 0 8px 30px rgba(0,0,0,0.6) }
+.skill-logo{ width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:10px; background: rgba(255,255,255,0.03); font-weight:700 }
+.skill-logo.cpp{ background: linear-gradient(135deg,#ffd700,#ff7f50); color:#001; font-family:monospace }
+.skill-logo.git{ background: linear-gradient(135deg,#666,#000); color:#eee; font-family:monospace }
+.skill-content strong{ display:block }
+.skill-content span{ display:block; color:#9aa6b2; font-size:.9rem }
 
 /* Contact page layout adjustments */
 .contact-page {
