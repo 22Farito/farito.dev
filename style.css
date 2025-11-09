@@ -74,7 +74,7 @@ nav a:hover, nav a.active {
   font-weight: 300;
   margin-top: 10px;
   color: #ccc;
-  height: 2rem; /* fixed height */
+  height: 2rem; 
   white-space: nowrap;
   overflow: hidden;
   border-right: 0.15em solid #58a6ff; /* permanent cursor line */
