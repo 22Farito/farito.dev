@@ -115,13 +115,13 @@ nav a:hover, nav a.active {
 /* Contact page layout adjustments */
 .contact-page {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* keep header/logo at the top-left; content flows from top */
+  padding-top: 100px; /* space for header */
 }
 
 .contact {
   max-width: 720px;
-  padding: 40px 20px;
-  text-align: center;
+  padding: 20px 20px 80px 20px;
+  margin: 0 auto;
+  text-align: left;
 }
