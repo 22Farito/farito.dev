@@ -15,6 +15,18 @@ body, html {
   background: radial-gradient(circle at center, #000010, #000);
 }
 
+/* subtle textured noise overlay like the attached image */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.01) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.5;
+  z-index: -1;
+}
+
 canvas#stars {
   position: fixed;
   top: 0;
@@ -59,6 +71,24 @@ nav a:hover, nav a.active {
   text-align: center;
   z-index: 2;
 }
+
+/* CTA button */
+.btn-primary {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 18px;
+  background: linear-gradient(90deg,#2a9df4,#6cc6ff);
+  color: #001019;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(44,162,255,0.12);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn-primary:hover{ transform: translateY(-3px); box-shadow: 0 10px 24px rgba(44,162,255,0.18); }
+
+html { scroll-behavior: smooth; }
 
 .hero h1 {
   font-size: 2.5rem;
@@ -125,3 +155,25 @@ nav a:hover, nav a.active {
   margin: 0 auto;
   text-align: left;
 }
+
+/* Projects section styles */
+.projects {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.25));
+  z-index: 1;
+}
+
+.projects-inner{ max-width: 900px; margin: 0 auto; text-align: center; }
+.projects h3{ font-size: 1.6rem; margin-bottom: 6px; }
+.projects-sub{ color: #9aa6b2; margin-bottom: 22px }
+.project-cards{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap }
+.project-card{
+  display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;
+  background: rgba(255,255,255,0.02); padding:14px 18px; border-radius:12px; min-width:220px;
+  transition: transform .12s ease, box-shadow .12s ease; border: 1px solid rgba(255,255,255,0.03);
+}
+.project-card:hover{ transform: translateY(-6px); box-shadow: 0 8px 30px rgba(0,0,0,0.6) }
+.project-logo{ width:48px; height:48px; display:flex; align-items:center; justify-content:center; border-radius:8px; background: rgba(255,255,255,0.03); font-weight:700 }
+.project-logo.cpp{ background: linear-gradient(135deg,#0a5  , #00aaff); color:#001; font-family:monospace }
+.project-content strong{ display:block }
+.project-content span{ display:block; color:#9aa6b2; font-size:.9rem }
