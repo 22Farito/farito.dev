@@ -12,22 +12,27 @@ body, html {
   font-family: 'Poppins', sans-serif;
   color: white;
   overflow-x: hidden;
-  /* dark purple base */
-  background: linear-gradient(180deg,#0b0014,#16021f 60%);
+  /* darker purple base */
+  background: linear-gradient(180deg,#04000a,#12001a 70%);
 }
 
-/* subtle textured noise overlay like the attached image */
+/* textured, pixelated static overlay */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  /* purple-tinted static overlay */
-  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(180deg, rgba(30,5,30,0.05), rgba(6,0,10,0.75));
-  background-size: 3px 3px, 100% 100%;
+  /* layered radial gradients create a pixel/static look */
+  background-image:
+    radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.03) 3px, transparent 3px),
+    linear-gradient(180deg, rgba(30,5,30,0.03), rgba(6,0,10,0.9));
+  background-size: 4px 4px, 12px 12px, 100% 100%;
+  background-repeat: repeat, repeat, no-repeat;
   opacity: 0.95;
   z-index: -1;
-  mix-blend-mode: overlay;
+  mix-blend-mode: screen;
+  filter: contrast(1.12) saturate(1.1);
 }
 
 canvas#stars {
