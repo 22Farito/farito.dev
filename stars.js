@@ -6,12 +6,10 @@ canvas.height = window.innerHeight;
 
 let stars = [];
 
-// Helper
 function random(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-// Star objects
 for (let i = 0; i < 300; i++) {
   stars.push({
     x: random(0, canvas.width),
@@ -19,11 +17,11 @@ for (let i = 0; i < 300; i++) {
     radius: random(0.5, 2),
     alpha: random(0.3, 1),
     speed: random(0.01, 0.05),
-    color: `hsl(${random(200, 250)}, 100%, 80%)` // bluish stars
+    color: `hsl(${random(200, 250)}, 100%, 80%)`
   });
 }
 
-// Nebula gradient overlay
+// Nebula overlay
 const nebula = ctx.createRadialGradient(canvas.width/2, canvas.height/2, 0, canvas.width/2, canvas.height/2, canvas.width);
 nebula.addColorStop(0, 'rgba(40,20,80,0.2)');
 nebula.addColorStop(0.5, 'rgba(80,20,120,0.1)');
@@ -33,7 +31,6 @@ function animate() {
   ctx.fillStyle = "#000010";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Draw nebula overlay
   ctx.fillStyle = nebula;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
