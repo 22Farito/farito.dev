@@ -6,32 +6,43 @@ canvas.height = window.innerHeight;
 
 let stars = [];
 
+// Helper
 function random(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-// Create stars
+// Star objects
 for (let i = 0; i < 300; i++) {
   stars.push({
     x: random(0, canvas.width),
     y: random(0, canvas.height),
     radius: random(0.5, 2),
     alpha: random(0.3, 1),
-    speed: random(0.01, 0.05)
+    speed: random(0.01, 0.05),
+    color: `hsl(${random(200, 250)}, 100%, 80%)` // bluish stars
   });
 }
 
-// Animate stars
+// Nebula gradient overlay
+const nebula = ctx.createRadialGradient(canvas.width/2, canvas.height/2, 0, canvas.width/2, canvas.height/2, canvas.width);
+nebula.addColorStop(0, 'rgba(40,20,80,0.2)');
+nebula.addColorStop(0.5, 'rgba(80,20,120,0.1)');
+nebula.addColorStop(1, 'rgba(0,0,0,0.3)');
+
 function animate() {
-  ctx.fillStyle = "rgba(0, 0, 10, 0.8)";
+  ctx.fillStyle = "#000010";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Draw nebula overlay
+  ctx.fillStyle = nebula;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   for (let star of stars) {
     ctx.globalAlpha = star.alpha;
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-    ctx.fillStyle = "white";
-    ctx.shadowColor = "white";
+    ctx.fillStyle = star.color;
+    ctx.shadowColor = star.color;
     ctx.shadowBlur = 5;
     ctx.fill();
 
