@@ -146,18 +146,21 @@ html { scroll-behavior: smooth; }
 .nav-skill{ margin-left: 14px }
 
 /* Skills section styles */
-.skills{ padding: 40px 20px 80px 20px; background: transparent; scroll-margin-top: 90px }
+.skills{ padding: 160px 20px 120px 20px; background: transparent; scroll-margin-top: 90px }
 .skills-inner{ max-width: 960px; margin: 0 auto; text-align: center }
-.skills h3{ font-size: 1.6rem; margin-bottom: 6px}
+.skills h3{ font-size: 1.8rem; margin-bottom: 6px}
 .skills-sub{ color: #9aa6b2; margin-bottom: 22px }
-.skill-cards{ display:flex; gap:20px; justify-content:center; flex-wrap:wrap }
-.skill-card{ display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; background: rgba(255,255,255,0.02); padding:14px 18px; border-radius:12px; min-width:220px; transition: transform .12s ease, box-shadow .12s ease; border: 1px solid rgba(255,255,255,0.03); }
-.skill-card:hover{ transform: translateY(-6px); box-shadow: 0 8px 30px rgba(0,0,0,0.6) }
-.skill-logo{ width:52px; height:52px; display:flex; align-items:center; justify-content:center; border-radius:10px; background: rgba(255,255,255,0.03); font-weight:700 }
+.skill-cards{ display:flex; gap:28px; justify-content:center; flex-wrap:wrap }
+.skill-card{ display:flex; align-items:center; gap:18px; text-decoration:none; color:inherit; background: rgba(255,255,255,0.02); padding:22px 26px; border-radius:16px; min-width:320px; transition: transform .12s ease, box-shadow .12s ease; border: 1px solid rgba(255,255,255,0.03); }
+.skill-card:hover{ transform: translateY(-6px); box-shadow: 0 10px 36px rgba(0,0,0,0.6) }
+.skill-logo{ width:80px; height:80px; display:flex; align-items:center; justify-content:center; border-radius:12px; background: rgba(255,255,255,0.03); font-weight:800; font-size:1.1rem }
 .skill-logo.cpp{ background: linear-gradient(135deg,#ffd700,#ff7f50); color:#001; font-family:monospace }
 .skill-logo.git{ background: linear-gradient(135deg,#666,#000); color:#eee; font-family:monospace }
 .skill-content strong{ display:block }
-.skill-content span{ display:block; color:#9aa6b2; font-size:.9rem }
+.skill-content span{ display:block; color:#9aa6b2; font-size:.95rem }
+
+/* stabilize typewriter height to avoid layout jumps */
+#typewriter{ display:block; height:2rem; line-height:2rem; min-width:8ch }
 
 /* Contact page layout adjustments */
 .contact-page {
