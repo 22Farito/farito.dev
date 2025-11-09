@@ -12,7 +12,8 @@ body, html {
   font-family: 'Poppins', sans-serif;
   color: white;
   overflow-x: hidden;
-  background: radial-gradient(circle at center, #000010, #000);
+  /* dark purple base */
+  background: linear-gradient(180deg,#0b0014,#16021f 60%);
 }
 
 /* subtle textured noise overlay like the attached image */
@@ -21,10 +22,10 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  /* heavier static/grain */
-  background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35));
+  /* purple-tinted static overlay */
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(180deg, rgba(30,5,30,0.05), rgba(6,0,10,0.75));
   background-size: 3px 3px, 100% 100%;
-  opacity: 0.85;
+  opacity: 0.95;
   z-index: -1;
   mix-blend-mode: overlay;
 }
@@ -43,7 +44,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 2;
 }
@@ -66,10 +67,8 @@ nav a:hover, nav a.active {
 }
 
 .hero {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin-top: 80px; /* account for fixed header */
   text-align: center;
   z-index: 2;
 }
@@ -147,7 +146,7 @@ html { scroll-behavior: smooth; }
 .nav-skill{ margin-left: 14px }
 
 /* Skills section styles */
-.skills{ padding: 140px 20px 80px 20px; background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.6)); }
+.skills{ padding: 40px 20px 80px 20px; background: transparent; scroll-margin-top: 90px }
 .skills-inner{ max-width: 960px; margin: 0 auto; text-align: center }
 .skills h3{ font-size: 1.6rem; margin-bottom: 6px}
 .skills-sub{ color: #9aa6b2; margin-bottom: 22px }
