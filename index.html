@@ -14,7 +14,6 @@
     <nav>
       <a href="index.html" class="active">Home</a>
       <a href="#skills" class="nav-skill">Skills</a>
-      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -42,6 +41,7 @@
     <div class="skills-inner">
       <h3>Skills</h3>
       <p class="skills-sub">Coding languages & tools I know</p>
+      <p class="skills-desc">I focus on efficient, modern C++ development and solid source control workflows using Git. Below are the core skills I use often.</p>
       <div class="skill-cards">
         <a class="skill-card" href="#" aria-label="C++ projects">
           <div class="skill-logo cpp">C++</div>
@@ -61,6 +61,20 @@
       </div>
     </div>
   </section>
+
+  <script>
+    // smooth-scroll to skills when the nav link is clicked
+    document.addEventListener('DOMContentLoaded', function () {
+      const nav = document.querySelector('.nav-skill');
+      const skills = document.getElementById('skills');
+      if (nav && skills) {
+        nav.addEventListener('click', function (e) {
+          e.preventDefault();
+          skills.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+    });
+  </script>
 
   <script src="typewriter.js"></script>
 </body>
